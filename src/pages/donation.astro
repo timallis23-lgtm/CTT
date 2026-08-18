@@ -70,7 +70,7 @@ import Layout from '../layouts/Layout.astro';
         <p class="donation-bank"><strong>12-3488-0032017-00</strong><br />Account Name: Community Transformation Trust</p>
         <p class="donation-p">When making your payment, please include your name in the &ldquo;Reference&rdquo; section so we can match your donation.</p>
 
-        <form class="donation-form" action="#" method="post">
+        <form class="donation-form" id="donation-form" action="mailto:david@betterworld.nz" method="post" enctype="text/plain">
           <label>Your Full Name (required)
             <input type="text" name="fullname" placeholder="John Smith" required />
           </label>
@@ -110,4 +110,26 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </section>
   </div>
+
+  <script is:inline>
+    (function () {
+      var form = document.getElementById('donation-form');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var f = form.elements;
+        var lines = [
+          'Full Name: ' + (f.fullname.value || ''),
+          'Email: ' + (f.email.value || ''),
+          'Donation Amount (NZD): ' + (f.amount.value || ''),
+          'Frequency: ' + (f.frequency.value || ''),
+          'Project: ' + (f.project.value || ''),
+          'Comments: ' + (f.comments.value || '')
+        ];
+        var subject = 'Donation via Community Transformation Trust';
+        var body = lines.join('\r\n');
+        window.location.href = 'mailto:david@betterworld.nz?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      });
+    })();
+  </script>
 </Layout>
