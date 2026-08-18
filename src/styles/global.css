@@ -669,7 +669,7 @@ html.js .reveal:not(.is-visible) {
 
 .donation-rule {
   border: 0;
-  border-top: 1px solid rgba(241, 237, 238, 0.35);
+  border-top: 2px dotted rgba(241, 237, 238, 0.5);
   max-width: 950px;
   margin: 48px 0;
 }
@@ -683,14 +683,15 @@ html.js .reveal:not(.is-visible) {
 .donate-pills--center { justify-content: center; }
 
 .donate-pill {
+  flex: 1 1 200px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 230px;
+  min-width: 200px;
   padding: 16px 24px;
   background: var(--cream);
   color: #000;
-  border-radius: 14px;
+  border-radius: 12px;
   font-family: 'Lexend', sans-serif;
   font-weight: 600;
   font-size: 16px;
@@ -698,6 +699,7 @@ html.js .reveal:not(.is-visible) {
   text-align: center;
   transition: transform 0.15s, box-shadow 0.15s;
 }
+.donate-pills--center .donate-pill { flex: 0 0 auto; min-width: 280px; }
 .donate-pill:hover,
 .donate-pill:focus-visible {
   transform: translateY(-2px);
