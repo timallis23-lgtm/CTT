@@ -2,10 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 
 const projects = [
-  { years: '2025', place: 'Water Filters in Egypt', href: '/water-filters-in-egypt' },
-  { years: '2023-2024', place: 'The Village Drill Hybrid for Liberia/Sierra Leone', href: '/the-village-drill-hybrid' },
-  { years: '2026', place: 'Village Drill in Kenya', href: '/village-drill-in-kenya' },
-  { years: '', place: 'WHOlives', href: '/wholives' },
+  { years: '2025', place: 'Water Filters in Egypt', href: '/water-filters-in-egypt', img: '/images/projects/water-filters-egypt.png' },
+  { years: '2023-2024', place: 'The Village Drill Hybrid for Liberia/Sierra Leone', href: '/the-village-drill-hybrid', img: '/images/projects/village-drill-hybrid.png' },
+  { years: '2026', place: 'Village Drill in Kenya', href: '/village-drill-in-kenya', img: '/images/projects/village-drill-kenya.png' },
+  { years: '', place: 'WHOlives', href: '/wholives', img: '/images/projects/wholives.png' },
 ];
 ---
 
@@ -29,7 +29,7 @@ const projects = [
         <div class="card-grid">
           {projects.map((p) => (
             <a class="project-card reveal" href={p.href}>
-              <img src="/images/water.png" alt={`Water project – ${p.place}`} loading="lazy" />
+              <img src={p.img} alt={`Water project – ${p.place}`} loading="lazy" />
               {p.years && <p class="card-date">{p.years}</p>}
               <p class="card-loc">{p.place}</p>
               <p class="card-read">Read now</p>

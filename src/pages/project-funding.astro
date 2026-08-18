@@ -2,9 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 
 const projects = [
-  { years: '', place: 'Micro-Enterprise Loans in Egypt', href: '/micro-enterprise-loans-in-egypt' },
-  { years: '2023', place: 'ReliefAid in Gaza', href: '/reliefaid' },
-  { years: '', place: 'Mukinge Hospital in Zambia', href: '/mukinge-hospital-in-zambia' },
+  { years: '', place: 'Micro-Enterprise Loans in Egypt', href: '/micro-enterprise-loans-in-egypt', img: '/images/projects/micro-enterprise-egypt.png' },
+  { years: '2023', place: 'ReliefAid in Gaza', href: '/reliefaid', img: '/images/projects/reliefaid-gaza.png' },
+  { years: '', place: 'Mukinge Hospital in Zambia', href: '/mukinge-hospital-in-zambia', img: '/images/projects/mukinge-hospital-zambia.png' },
 ];
 ---
 
@@ -28,7 +28,7 @@ const projects = [
         <div class="card-grid">
           {projects.map((p) => (
             <a class="project-card reveal" href={p.href}>
-              <img src="/images/funding.png" alt={`Funded project – ${p.place}`} loading="lazy" />
+              <img src={p.img} alt={`Funded project – ${p.place}`} loading="lazy" />
               {p.years && <p class="card-date">{p.years}</p>}
               <p class="card-loc">{p.place}</p>
               <p class="card-read">Read now</p>
