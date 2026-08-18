@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const projects = [
+  { years: '2023-2026', place: 'Myanmar', img: '/images/details/detail-myanmar-banner.png', href: '/myanmar-tcd-project-in-yone-taw' },
+  { years: '2019-2024', place: 'Indonesia', img: '/images/details/detail-mawa-banner.png', href: '/mawa-indonesia-tcd-project' },
+  { years: '2023-2028', place: 'Cairo', img: '/images/details/detail-cairo-banner.png', href: '/cairo-tcd-project-ezbet-el-haggana-village' },
+  { years: '2023-Ongoing', place: 'TCD Worker Seed Funding', img: '/images/details/detail-seed-banner.png', href: '/tcd-worker-seed-funding' },
+  { years: '2025-2026', place: 'TCD Training Uganda', img: '/images/details/detail-uganda-banner.png', href: '/tcd-training-project-in-kasese-uganda' },
+];
+---
+
+<Layout title="TCD Projects | Community Transformation Trust" description="Transformational Community Development projects supported by the Community Transformation Trust.">
+  <div class="subpage">
+    <!-- HERO -->
+    <section class="subpage-hero">
+      <div class="wrap">
+        <h1>TCD Projects</h1>
+      </div>
+    </section>
+
+    <!-- BODY -->
+    <section class="subpage-body">
+      <div class="wrap">
+        <h2 class="sub-h reveal">Transformational Community Development</h2>
+
+        <h3 class="sub-q">What is Transformational Community Development (TCD)?</h3>
+        <p class="sub-p">
+          <a href="https://www.globalhopenetwork.org/sustainable-development/" target="_blank" rel="noreferrer">Transformational Community Development (TCD)</a>
+          is a process created by
+          <a href="https://www.globalhopenetwork.org/" target="_blank" rel="noreferrer">Global Hope Network International (GHNI)</a>
+          for helping villages transform themselves and break the cycle of extreme poverty.
+        </p>
+        <p class="sub-p">
+          TCD staff help villages form sustainable development committees in five main areas (water, food, wellness,
+          education, and income). TCD staff partners with local villagers to identify and implement solutions for their
+          community, providing a foundation to achieve village-sustainability, and requiring the community to take
+          ownership in transforming their village. For a community to be self-sustainable, they must buy into the program
+          and be involved in the process of TCD from beginning to end. The community not only has to want change, but also
+          be ready to co-invest their own resources (time, talent &amp; treasure) and assume responsibility for the
+          development of their own community.
+        </p>
+
+        <h3 class="sub-q">TCD Projects we are supporting:</h3>
+        <p class="sub-p">We are currently funding several TCD projects run in villages in Indonesia, Tajikistan, Egypt, Myanmar, &amp; Vietnam.</p>
+        <p class="sub-p">We are also funding a new ongoing &lsquo;TCD Worker Seed Fund&rsquo; (established in 2023), which will financially support a GHNI worker so that they can form relationships with and investigate new villages in key regions, to determine if they are suitable for new TCD projects.</p>
+        <p class="sub-p">Join Us - Help fund more TCD Projects in new villages</p>
+        <p class="sub-p">We&apos;d love for you to join us in supporting new TCD Projects in other villages! The best way to support these TCD projects from NZ is to make a one-off or regular donation to our charity Community Transformation Trust for use towards TCD Projects (all donations to Community Transformation Trust are tax deductible in NZ).</p>
+
+        <div class="card-grid">
+          {projects.map((p) => (
+            <a class="project-card reveal" href={p.href}>
+              <img src={p.img} alt={`TCD project – ${p.place}`} loading="lazy" />
+              <p class="card-date">{p.years}</p>
+              <p class="card-loc">{p.place}</p>
+              <p class="card-read">Read now</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- DONATE -->
+    <section class="donate-band">
+      <div class="wrap donate-cols reveal">
+        <div class="donate-copy">
+          <h4>Make a Donation to TCD Projects</h4>
+          <a href="/donation" class="btn-donate">Donate</a>
+        </div>
+        <div class="donate-image">
+          <img src="/images/tcd.png" alt="Community members supported by TCD projects" loading="lazy" />
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const reports = [2022, 2023, 2024, 2025, 2026];
+---
+
+<Layout title="About | Community Transformation Trust" description="About the Community Transformation Trust – a registered New Zealand charity relieving poverty worldwide.">
+  <div class="subpage subpage--about">
+    <section class="subpage-body">
+      <div class="wrap">
+        <div class="about-grid">
+
+          <!-- About -->
+          <div class="about-row reveal">
+            <div class="about-row__label"><h1>About</h1></div>
+            <div class="about-row__body">
+              <p class="sub-p">Community Transformation Trust (CTT) was established in March 2020 by trustees David Allis, Simon Forrest, David Beard, and Mark Christensen. Our mission is to raise money to facilitate the relief of poverty worldwide, through improvement in areas such as health, education, food, income, sanitation, and water.</p>
+              <p class="sub-p">We are a registered New Zealand charity with Overseas Donee Status, meaning all donations are tax-deductible in New Zealand. We are also a member of CID NZ, the Council for International Development.</p>
+              <p class="sub-p">We don&rsquo;t just fund projects from a distance. Trustee David Allis and his wife Margaret have visited projects we support firsthand, travelling to Vietnam in 2024 to see Hagar&rsquo;s work combating human trafficking, and to Egypt in 2025 to witness how micro-enterprise loans and water filters are transforming lives in poor communities.</p>
+              <p class="sub-p">David and Margaret also run the Better World Initiative, a charity established in 1997 through their business Barcodes Ltd, which gives 100% of its profits to charitable projects in New Zealand and overseas.</p>
+              <p class="sub-p">We operate with a lean model, guided by evidence and accountability, to ensure every dollar reaches those who need it most.</p>
+            </div>
+          </div>
+
+          <!-- Contact -->
+          <div class="about-row reveal">
+            <div class="about-row__label"><h2>Contact</h2></div>
+            <div class="about-row__body">
+              <p class="sub-p contact-line">To get in touch, email trustee David Allis at <a href="mailto:david@betterworld.nz">david@betterworld.nz</a>.</p>
+            </div>
+          </div>
+
+          <!-- Annual Reports -->
+          <div class="about-row reveal">
+            <div class="about-row__label"><h2>Annual Reports</h2></div>
+            <div class="about-row__body">
+              <div class="report-links">
+                {reports.map((y) => (
+                  <a href={`/annual-report-${y}`}>Annual Report {y}</a>
+                ))}
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

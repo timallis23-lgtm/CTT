@@ -1,0 +1,175 @@
+﻿---
+import '../styles/global.css';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Community Transformation Trust</title>
+    <meta name="description" content="Community Transformation Trust – Support that Empowers" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script is:inline>document.documentElement.classList.add('js');</script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="wrap header-inner">
+        <a href="#" class="logo-link" aria-label="Community Transformation Trust home">
+          <img src="/images/logo.png" alt="Community Transformation Trust logomark" class="logo-mark" />
+        </a>
+        <nav aria-label="Primary" class="primary-nav">
+          <a href="/tcd-projects">TCD</a>
+          <a href="/water-projects">Water</a>
+          <a href="/project-funding">Funding</a>
+          <a href="/about">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+
+      <!-- HERO -->
+      <section class="hero">
+        <div class="wrap hero-inner">
+          <div class="hero-text">
+            <img src="/images/logo.png" alt="" aria-hidden="true" class="hero-emblem" />
+            <h1>Community Transformation Trust</h1>
+            <p class="hero-tagline">Support that Empowers</p>
+          </div>
+          <div class="hero-photo-wrap">
+            <div class="hero-photo">
+              <img src="/images/hero.png" alt="Community gathering" loading="eager" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INTRO -->
+      <section class="intro" id="about">
+        <div class="wrap">
+          <h2>Partnerships with disadvantaged communities that transform their world</h2>
+          <p>At the Community Transformation Trust, we believe every person deserves the opportunity to thrive, and that together, we can turn that belief into reality. We raise vital funds to drive meaningful, lasting change across the world by relieving poverty and building stronger, healthier communities in developing regions.</p>
+          <p>Through targeted support in key areas such as health, education, nutrition, income generation, sanitation, and clean water, we help transform lives and break the cycle of poverty. Whether it&apos;s delivering emergency relief from hunger, sickness, or natural disasters, strengthening local economies, or raising educational standards so children and families can build brighter futures. CTT turns compassion into real, measurable progress.</p>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="projects">
+        <ul class="projects-list">
+
+          <!-- Label -->
+          <li class="projects-label-row">
+            <div class="wrap">
+              <h3>Projects we support</h3>
+            </div>
+          </li>
+
+          <!-- TCD: text left / image right -->
+          <li class="project-row reveal" id="tcd">
+            <div class="wrap project-cols">
+              <div class="project-body">
+                <h4>TCD</h4>
+                <p>Transformational Community Development (TCD) empowers the world&apos;s poorest villages to break the cycle of extreme poverty through sustainable, community-led change. Local teams coach villagers in water, food security, wellness, education, and income generation, using low-cost, low-tech solutions built on local leadership and resources, creating lasting transformation that lasts for generations.</p>
+                <a href="#" class="btn-read-more">Read More</a>
+              </div>
+              <div class="project-img">
+                <img src="/images/tcd.png" alt="Community meeting – TCD programme" loading="lazy" />
+              </div>
+            </div>
+          </li>
+
+          <!-- Water: text left / image right -->
+          <li class="project-row reveal" id="water">
+            <div class="wrap project-cols">
+              <div class="project-img">
+                <img src="/images/water.png" alt="Village Drill water project" loading="lazy" />
+              </div>
+              <div class="project-body">
+                <h4>Water Projects</h4>
+                <p>Clean water initiatives are transforming health and opportunity in remote communities by delivering sustainable access to safe drinking water. Through portable Village Drill technology in Sierra Leone and Liberia, community-built wells, and household water filters in Egypt, local teams provide reliable, affordable solutions that reduce waterborne disease, empower families, and unlock better education and livelihoods for thousands.</p>
+                <a href="#" class="btn-read-more">Read More</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Funding: text left / image right -->
+          <li class="project-row reveal" id="funding">
+            <div class="wrap project-cols">
+              <div class="project-body">
+                <h4>Project Funding</h4>
+                <p>Micro-finance loans are empowering women in Egypt to break the cycle of poverty by providing small, accessible loans that spark entrepreneurship and financial independence. Through our partnership with GHNI, women in Cairo and surrounding regions are launching and growing businesses, from ice-cream and candy-floss production to tailoring, hairdressing, shopkeeping, and more, creating sustainable income, stronger families, and brighter futures for entire communities.</p>
+                <a href="#" class="btn-read-more">Read More</a>
+              </div>
+              <div class="project-img">
+                <img src="/images/funding.png" alt="Community funding partnership" loading="lazy" />
+              </div>
+            </div>
+          </li>
+
+        </ul>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta">
+        <div class="wrap cta-inner reveal">
+          <h2>Join us in creating a lasting positive change.</h2>
+          <p>We exist because change is possible. Every donation, every partnership, and every act of generosity fuels hope and creates pathways out of hardship. By joining us, you become part of a powerful movement that empowers communities, restores dignity, and proves that a better world is not just a dream, it&apos;s something we can build together, one transformed life at a time.</p>
+          <a href="/donation" class="btn-donate">Make a Donation</a>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="wrap footer-inner reveal">
+        <nav aria-label="Footer" class="footer-nav">
+          <a href="/">Home</a>
+          <a href="/#about">Projects</a>
+          <a href="/about">About</a>
+          <a href="/about">Contact</a>
+        </nav>
+        <p>Community Transformation Trust.</p>
+      </div>
+    </footer>
+
+  </body>
+  <script>
+    (function () {
+      const els = Array.from(document.querySelectorAll('.reveal'));
+      if (!els.length) return;
+      const show = (el) => el.classList.add('is-visible');
+      const check = () => {
+        const vh = window.innerHeight;
+        els.forEach((el) => {
+          if (!el.classList.contains('is-visible')) {
+            const r = el.getBoundingClientRect();
+            if (r.top < vh * 0.9 && r.bottom > 0) show(el);
+          }
+        });
+      };
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                show(entry.target);
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12 }
+        );
+        els.forEach((el) => io.observe(el));
+      }
+      check();
+      window.addEventListener('scroll', check, { passive: true });
+      window.addEventListener('load', () => setTimeout(check, 200));
+      setTimeout(() => els.forEach(show), 2500);
+    })();
+  </script>
+</html>

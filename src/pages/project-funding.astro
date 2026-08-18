@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const projects = [
+  { years: '', place: 'Micro-Enterprise Loans in Egypt', href: '/micro-enterprise-loans-in-egypt' },
+  { years: '2023', place: 'ReliefAid in Gaza', href: '/reliefaid' },
+  { years: '', place: 'Mukinge Hospital in Zambia', href: '/mukinge-hospital-in-zambia' },
+];
+---
+
+<Layout title="Project Funding | Community Transformation Trust" description="Projects funded by the Community Transformation Trust across Egypt, Gaza, and Zambia.">
+  <div class="subpage">
+    <!-- HERO -->
+    <section class="subpage-hero">
+      <div class="wrap">
+        <h1>Project Funding</h1>
+      </div>
+    </section>
+
+    <!-- BODY -->
+    <section class="subpage-body">
+      <div class="wrap">
+        <h2 class="sub-q reveal">What projects do we fund?</h2>
+        <p class="sub-p">Funding the right project in the right place can change lives in ways that ripple far beyond the immediate moment. Across three very different contexts, CT Trust has provided direct financial support to initiatives that are meeting urgent needs with practical, on-the-ground solutions.</p>
+        <p class="sub-p">In Egypt, we&rsquo;re helping provide micro-enterprise loans to women through our partner GHNI, small but transformative grants that are funding businesses, building independence, and with a 100% repayment rate, creating a sustainable cycle of opportunity. In Gaza, we donated $10,000 NZD to ReliefAid in 2023 to support their emergency relief work, helping deliver safe drinking water, hot meals, and food kits to displaced families in one of the world&rsquo;s most difficult humanitarian situations. And in rural Zambia, we provide ongoing financial support to Mukinge Hospital and Dr. David Friend, a surgical missionary serving a rapidly growing patient population hours from the nearest city, where our funding helps keep essential medicines, including life-critical anaesthetics, on the shelves.</p>
+        <p class="sub-p">Different places, different needs, but the same commitment to making a tangible difference. Explore each project below to learn more.</p>
+
+        <div class="card-grid">
+          {projects.map((p) => (
+            <a class="project-card reveal" href={p.href}>
+              <img src="/images/funding.png" alt={`Funded project – ${p.place}`} loading="lazy" />
+              {p.years && <p class="card-date">{p.years}</p>}
+              <p class="card-loc">{p.place}</p>
+              <p class="card-read">Read now</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

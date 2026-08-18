@@ -1,0 +1,124 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Community Transformation Trust – Support that Empowers' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script is:inline>document.documentElement.classList.add('js');</script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="wrap header-inner">
+        <a href="/" class="logo-link" aria-label="Community Transformation Trust home">
+          <img src="/images/logo.png" alt="Community Transformation Trust logomark" class="logo-mark" />
+        </a>
+        <nav aria-label="Primary" class="primary-nav">
+          <a href="/tcd-projects">TCD</a>
+          <a href="/water-projects">Water</a>
+          <a href="/project-funding">Funding</a>
+          <a href="/about">About</a>
+          <a href="/donation">Donate</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="wrap footer-inner reveal">
+        <nav aria-label="Footer" class="footer-nav">
+          <a href="/">Home</a>
+          <a href="/#about">Projects</a>
+          <a href="/about">About</a>
+          <a href="/about">Contact</a>
+        </nav>
+        <p>Community Transformation Trust.</p>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        const els = Array.from(document.querySelectorAll('.reveal'));
+        if (!els.length) return;
+        const show = (el) => el.classList.add('is-visible');
+        const check = () => {
+          const vh = window.innerHeight;
+          els.forEach((el) => {
+            if (!el.classList.contains('is-visible')) {
+              const r = el.getBoundingClientRect();
+              if (r.top < vh * 0.9 && r.bottom > 0) show(el);
+            }
+          });
+        };
+        if ('IntersectionObserver' in window) {
+          const io = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  show(entry.target);
+                  io.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.12 }
+          );
+          els.forEach((el) => io.observe(el));
+        }
+        check();
+        window.addEventListener('scroll', check, { passive: true });
+        window.addEventListener('load', () => setTimeout(check, 200));
+        // Ultimate fail-safe: never leave content permanently hidden.
+        setTimeout(() => els.forEach(show), 2500);
+      })();
+    </script>
+
+    <script>
+      // Parallax for the report banner (hero) image.
+      (function () {
+        const wrap = document.querySelector('.report-banner-wrap');
+        if (!wrap) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        const img = wrap.querySelector('.report-banner');
+        if (!img) return;
+        let ticking = false;
+        const update = () => {
+          const rect = wrap.getBoundingClientRect();
+          // Only animate while the banner is in/near the viewport.
+          if (rect.bottom > -50 && rect.top < window.innerHeight) {
+            const shift = Math.min(window.scrollY * 0.22, 90);
+            img.style.transform = 'translate3d(0,' + shift + 'px,0)';
+          }
+          ticking = false;
+        };
+        const onScroll = () => {
+          if (!ticking) {
+            window.requestAnimationFrame(update);
+            ticking = true;
+          }
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll);
+        update();
+      })();
+    </script>
+  </body>
+</html>

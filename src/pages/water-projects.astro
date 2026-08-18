@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const projects = [
+  { years: '2025', place: 'Water Filters in Egypt', href: '/water-filters-in-egypt' },
+  { years: '2023-2024', place: 'The Village Drill Hybrid for Liberia/Sierra Leone', href: '/the-village-drill-hybrid' },
+  { years: '2026', place: 'Village Drill in Kenya', href: '/village-drill-in-kenya' },
+  { years: '', place: 'WHOlives', href: '/wholives' },
+];
+---
+
+<Layout title="Water Projects | Community Transformation Trust" description="Clean, safe water projects supported by the Community Transformation Trust across Egypt, Kenya, Sierra Leone, and Liberia.">
+  <div class="subpage">
+    <!-- HERO -->
+    <section class="subpage-hero">
+      <div class="wrap">
+        <h1>Water Projects</h1>
+      </div>
+    </section>
+
+    <!-- BODY -->
+    <section class="subpage-body">
+      <div class="wrap">
+        <h2 class="sub-q reveal">What are our water projects?</h2>
+        <p class="sub-p">Water is life, and right now, millions of people around the world lack reliable access to it. We&rsquo;re working to change that. Across Egypt, Kenya, Sierra Leone, and Liberia, we&rsquo;re funding and supporting a range of water projects that are bringing clean, safe water to families and communities who need it most.</p>
+        <p class="sub-p">Each project reflects our belief that sustainable, community-led solutions create the most meaningful and lasting change. In Egypt, we&rsquo;re placing water filters directly into homes where contaminated water causes daily hardship. In Sierra Leone and Liberia, a portable Village Drill is reaching remote communities that larger rigs simply can&rsquo;t access. In Kenya, we&rsquo;re helping a record-breaking drill team double their impact, and through our partnership with WHOlives, we&rsquo;re supporting an innovative loan model that empowers communities to own and maintain their water source for generations to come.</p>
+        <p class="sub-p">Clean water transforms everything: health, education, livelihoods, and hope. Explore our projects below to see how your support is making a real and lasting difference.</p>
+
+        <div class="card-grid">
+          {projects.map((p) => (
+            <a class="project-card reveal" href={p.href}>
+              <img src="/images/water.png" alt={`Water project – ${p.place}`} loading="lazy" />
+              {p.years && <p class="card-date">{p.years}</p>}
+              <p class="card-loc">{p.place}</p>
+              <p class="card-read">Read now</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG -->
+    <section class="donate-band">
+      <div class="wrap cta-inner reveal" style="text-align:center;">
+        <h4>Better Water Blog</h4>
+        <p class="sub-p" style="color:var(--cream);margin-bottom:24px;">Call out a feature, benefit, or value of your site, then link to a page where people can learn more about it.</p>
+        <a href="#" class="btn-donate">Read More</a>
+      </div>
+    </section>
+  </div>
+</Layout>

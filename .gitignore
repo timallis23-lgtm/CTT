@@ -1,0 +1,26 @@
+# dependencies
+node_modules/
+node_modules_old/
+
+# build output
+dist/
+.astro/
+
+# environment
+.env
+.env.production
+.env.*.local
+
+# logs
+*.log
+dev-server.log
+npm-debug.log*
+
+# os / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# cloudflare
+.wrangler/
