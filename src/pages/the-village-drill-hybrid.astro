@@ -28,7 +28,10 @@ import Layout from '../layouts/Layout.astro';
     <section class="reveal">
       <h3>Updates on the Village Drill Hybrid in Liberia:</h3>
       <div class="report-video">
-        <iframe src="https://www.youtube.com/embed/TENX4c6g3dU" title="WHOlives helped us be self-reliant" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <button type="button" class="video-facade" data-embed="https://www.youtube.com/embed/TENX4c6g3dU?autoplay=1" aria-label="Play the WHOlives video">
+          <img src="/images/projects/village-drill-hybrid-video.jpg" alt="WHOlives: helping communities become self-reliant" loading="lazy" />
+          <span class="video-play" aria-hidden="true"></span>
+        </button>
       </div>
 
       <h3>June 2025 update:</h3>
@@ -47,4 +50,17 @@ import Layout from '../layouts/Layout.astro';
       <p>They are engaging with existing partners including the LDS Church and UN Agencies. They are also working on acquiring a dedicated truck to transport the drill. They&rsquo;ve expanded outreach and advertising efforts for this new drill service, while finalizing logistical preparations for the first installations.</p>
     </section>
   </article>
+
+  <script is:inline>
+    document.querySelectorAll('.video-facade').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const iframe = document.createElement('iframe');
+        iframe.src = btn.dataset.embed;
+        iframe.title = 'Video player';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        iframe.allowFullscreen = true;
+        btn.replaceWith(iframe);
+      });
+    });
+  </script>
 </Layout>
