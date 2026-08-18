@@ -2,55 +2,111 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Donate | Community Transformation Trust" description="Support community-led transformation projects with a one-off or regular donation to Community Transformation Trust.">
-  <div class="subpage">
+<Layout title="Make a Donation | Community Transformation Trust" description="Support families in Egypt, clean-water projects, and community development with a one-off or recurring donation to Community Transformation Trust.">
+  <div class="subpage subpage--donation">
     <section class="subpage-hero">
       <div class="wrap">
         <h1>Make a Donation</h1>
       </div>
     </section>
 
-    <section class="subpage-body">
-      <div class="wrap donation-grid reveal">
-        <div class="donation-copy">
-          <h2 class="sub-h">Help fund lasting change</h2>
-          <p class="sub-p">Every donation helps Community Transformation Trust support community-led work that improves water, food, health, education, income, and sanitation in places where poverty is most entrenched.</p>
-          <p class="sub-p">All donations to Community Transformation Trust are tax-deductible in New Zealand, and we welcome both one-off gifts and regular support for ongoing projects.</p>
-          <div class="donation-cta-row">
-            <a href="mailto:david@betterworld.nz?subject=Donation%20enquiry" class="btn-donate">Email to donate</a>
-            <a href="/about" class="btn-read-more">Learn about our work</a>
-          </div>
+    <section class="subpage-body donation-page">
+      <div class="wrap">
+        <p class="donation-intro reveal">Support any of the projects below by making a donation (in NZD). To give by debit or credit card, click a blue &ldquo;Donate&rdquo; button. If you prefer to donate by bank deposit &mdash; either one-off or recurring &mdash; please complete the Donation Form at the bottom of this page.</p>
+        <p class="donation-intro">All donations go to our New Zealand-registered charity, Community Transformation Trust, and will be directed to the project you choose.</p>
+
+        <hr class="donation-rule" />
+
+        <!-- Support Families in Egypt -->
+        <h2 class="donation-h reveal">Support Families in Egypt</h2>
+        <p class="donation-p">Make a lasting impact for families in Egypt through water filters and micro-enterprise loans, delivered via our partnership with <a href="https://globalhopenetwork.org/" target="_blank" rel="noreferrer">GHNI (Global Hope Network International)</a>.</p>
+
+        <h3 class="donation-sub">Water Filter (Egypt)</h3>
+        <p class="donation-p">Donate a water filter ($120 NZD) to a family in Egypt. Your donation will go to GHNI (via CT Trust) to provide water filters to families in need in Egypt.</p>
+        <div class="donate-pills">
+          <a href="#" class="donate-pill">Donate 1 ($120)</a>
+          <a href="#" class="donate-pill">Donate 2 ($240)</a>
+          <a href="#" class="donate-pill">Donate 5 ($600)</a>
+          <a href="#" class="donate-pill">Donate 10 ($1,200)</a>
         </div>
 
-        <div class="donation-card">
-          <img src="/images/donation-illustration.svg" alt="Community-led development illustration" loading="eager" />
-          <div class="donation-card__body">
-            <h3>How your gift helps</h3>
-            <ul>
-              <li>Funds clean water and sanitation projects</li>
-              <li>Supports education, nutrition and wellness</li>
-              <li>Strengthens income-generating opportunities</li>
-              <li>Builds community-led resilience for the long term</li>
-            </ul>
-          </div>
+        <h3 class="donation-sub">Micro-Enterprise Loan (Egypt)</h3>
+        <p class="donation-p">Donate a micro-enterprise loan ($340 NZD) to empower women in Egypt (delivered via our partnership with GHNI). As loans are repaid, they&rsquo;re used to fund new loans for more women.</p>
+        <div class="donate-pills">
+          <a href="#" class="donate-pill">Donate 1 ($340)</a>
+          <a href="#" class="donate-pill">Donate 2 ($680)</a>
+          <a href="#" class="donate-pill">Donate 5 ($1,700)</a>
+          <a href="#" class="donate-pill">Donate 10 ($3,400)</a>
         </div>
-      </div>
-    </section>
 
-    <section class="donate-band">
-      <div class="wrap donation-options">
-        <article class="donation-option reveal">
-          <h4>One-off gifts</h4>
-          <p>Make a single contribution to support an urgent need, a specific region, or a current project.</p>
-        </article>
-        <article class="donation-option reveal">
-          <h4>Regular giving</h4>
-          <p>Provide consistent support so communities can plan ahead and build momentum over time.</p>
-        </article>
-        <article class="donation-option reveal">
-          <h4>Project-specific support</h4>
-          <p>Give to a particular area of work such as water, food security, education, or income generation.</p>
-        </article>
+        <hr class="donation-rule" />
+
+        <!-- WHOlives -->
+        <h2 class="donation-h reveal">WHOlives &ndash; Clean Water</h2>
+        <p class="donation-p">WHOlives provides interest-free loans to impoverished communities so they can fund the drilling of a borehole in their village. Communities repay the loan, and the funds are then used to help another village &mdash; creating a sustainable cycle of clean water from day one.</p>
+        <p class="donation-p">To view the current projects they&rsquo;re fundraising for go to <a href="https://wholives.org/our-projects/" target="_blank" rel="noreferrer">wholives.org/our-projects/</a> &mdash; most are located in rural Kenya and Uganda. When the full amount is raised for a project, the funds are loaned to the village and used to drill a new borehole.</p>
+        <p class="donation-p">You can make a tax-deductible donation to WHOlives (Our Projects) by clicking the button below. Your donation (in NZD) will be made to our New Zealand-registered charity, Community Transformation Trust, and we will pass the funds directly on to WHOlives (Our Projects). <a href="https://wholives.org/our-projects/" target="_blank" rel="noreferrer">Find out more here.</a></p>
+        <div class="donate-pills donate-pills--center">
+          <a href="#" class="donate-pill">You choose the amount</a>
+        </div>
+
+        <hr class="donation-rule" />
+
+        <!-- Bank transfer -->
+        <h2 class="donation-h reveal">Make a Donation by Bank Transfer (One-Off or Recurring)</h2>
+        <p class="donation-p">You can also support any of these projects by making a bank transfer directly to our account. Please fill out the donation form below, and then make the payment via your bank (put your name and the purpose of the donation e.g. &ldquo;water filter&rdquo; in the reference section when making your payment).</p>
+        <p class="donation-p">Your donation will go to the project you specify. You will receive a donation receipt at the end of the financial year covering all donations made during the year.</p>
+        <p class="donation-p">You can choose to donate to any of the following:</p>
+        <ul class="donation-list">
+          <li>Transformational Community Development (TCD) Projects via GHNI: Help fund new village projects. Each project costs approximately $25,000 NZD per year and typically runs for 3&ndash;5 years, after which communities become self-sustaining. We will keep you updated when your donation is applied to a specific project and let you know how it&rsquo;s being used.</li>
+          <li>Micro-Enterprise Loans (Egypt): $340 per loan to empower women in Egypt (via GHNI).</li>
+          <li>Water Filters (Egypt): $120 per filter to provide clean water for households in Egypt.</li>
+          <li>WHOlives (Clean water) &mdash; providing loans to villages to help them pay for boreholes to be drilled.</li>
+        </ul>
+
+        <!-- Donation form -->
+        <h2 class="donation-h donation-form-h reveal">Donation Form</h2>
+        <p class="donation-p">Please complete the form below before making your donation to our ASB bank account:</p>
+        <p class="donation-bank"><strong>12-3488-0032017-00</strong><br />Account Name: Community Transformation Trust</p>
+        <p class="donation-p">When making your payment, please include your name in the &ldquo;Reference&rdquo; section so we can match your donation.</p>
+
+        <form class="donation-form" action="#" method="post">
+          <label>Your Full Name (required)
+            <input type="text" name="fullname" placeholder="John Smith" required />
+          </label>
+          <label>Your Email Address (required)
+            <input type="email" name="email" placeholder="JohnSmith@gmail.com" required />
+          </label>
+          <label>Donation Amount (in NZD) (required)
+            <input type="text" name="amount" placeholder="$10" required />
+          </label>
+          <label>Donation Frequency (required)
+            <select name="frequency" required>
+              <option value="">-Please choose an option-</option>
+              <option>Once-off</option>
+              <option>Weekly</option>
+              <option>Monthly</option>
+            </select>
+          </label>
+          <label>Which project would you like to support? (required)
+            <select name="project" required>
+              <option value="">-Please choose an option-</option>
+              <option>Transformational Community Development</option>
+              <option>Micro-enterprise loans to women in need in Egypt</option>
+              <option>Water filters to families in need in Egypt</option>
+              <option>WHOlives - Clean water projects</option>
+            </select>
+          </label>
+          <label>Any other comments? (optional)
+            <textarea name="comments" rows="4"></textarea>
+          </label>
+          <button type="submit" class="donation-send">Send</button>
+        </form>
+
+        <div class="donation-notes">
+          <p class="donation-p"><strong>Updates on the projects you are supporting &ndash;</strong><br />If you have made a one-off or regular donation, we will send you updates once or twice a year by email about the projects your donations have helped to support (you can opt out of the email updates at anytime). If you don&rsquo;t want to receive any email updates please let us know when you complete the donation form above.</p>
+          <p class="donation-p"><strong>Donation tax receipt:</strong><br />We will also email you a tax-deductible donation receipt at the end of the financial year (we will send one receipt which will cover all donations made during the tax year).</p>
+        </div>
       </div>
     </section>
   </div>
